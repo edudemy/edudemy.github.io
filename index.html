@@ -1,7 +1,28 @@
 <!DOCTYPE html>
 <html>
+<script> 
+function goFullScreen(){
+    var canvas = document.getElementById("screen");
+    if(canvas.requestFullScreen)
+        canvas.requestFullScreen();
+    else if(canvas.webkitRequestFullScreen)
+        canvas.webkitRequestFullScreen();
+    else if(canvas.mozRequestFullScreen)
+        canvas.mozRequestFullScreen();
+}
+</script>
+
 <body>
 <h1>Hello World</h1>
 <p>I'm hosted with GitHub Pages.</p>
+
+  
+  <p><canvas id="screen" width="800" height="500"
+    style="background: #FFFFFF; border: 5px solid black;" role="img">
+        Your browser does not support the canvas element.
+</canvas></p>
+
+<p><a href="javascript:goFullScreen();">Go Fullscreen</a></p>
+
 </body>
 </html>
